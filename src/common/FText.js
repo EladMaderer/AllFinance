@@ -1,13 +1,17 @@
 import React from 'react';
 import {Text, StyleSheet} from 'react-native';
-import Colors from '../global/globalStyles';
+import GStyles from '../global/globalStyles';
+import PropTypes from 'prop-types';
 
 const FText = ({children, bold, fontSize, style, ...props}) => (
   <Text
     style={[
       styles.container,
       style,
-      {fontFamily: bold ? 'Teko-Bold' : 'Teko-Medium', fontSize},
+      {
+        fontFamily: bold ? GStyles.fontFamilyBold : GStyles.fontFamily,
+        fontSize,
+      },
     ]}
     {...props}>
     {children}
@@ -16,13 +20,17 @@ const FText = ({children, bold, fontSize, style, ...props}) => (
 
 const styles = StyleSheet.create({
   container: {
-    color: Colors.primaryText,
+    color: GStyles.primaryText,
   },
 });
 
 FText.defaultProps = {
   bold: false,
   fontSize: 24,
+};
+
+FText.propTypes = {
+  bold: PropTypes.bool,
 };
 
 export default FText;
