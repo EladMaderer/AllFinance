@@ -1,4 +1,4 @@
 export default {
   appBG: '#303631',
-  primary: '#ffffff',
+  primaryText: '#ffa747',
 };

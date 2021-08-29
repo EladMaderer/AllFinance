@@ -13,7 +13,12 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		41DFDF3C798BBEC316455E54 /* libPods-AllFinance.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 965989DAD93D2293E1709AA5 /* libPods-AllFinance.a */; };
 		58E9C5D38F4E369C6CA1FA20 /* libPods-AllFinance-AllFinanceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 399E66A1B35296FB41803804 /* libPods-AllFinance-AllFinanceTests.a */; };
+		650DADC1FCA84AA08333C6F5 /* Teko-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CCE433BB9B644FCA92CB4BAF /* Teko-Light.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8A33958CFB0848A195DBAAA1 /* Teko-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E70159B6120D4F12A2578FC6 /* Teko-SemiBold.ttf */; };
+		8B716F520AE1468D8168DB91 /* Teko-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C591853730F64E448353621F /* Teko-Medium.ttf */; };
+		E7B4D85652C640DABE044FE0 /* Teko-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BCAD3249D38460F92F14BAC /* Teko-Bold.ttf */; };
+		F60E0C5BCE834ADDA916D7A7 /* Teko-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0B5A735D4C04CCC8EFB17FD /* Teko-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,7 +47,12 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = AllFinance/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		965989DAD93D2293E1709AA5 /* libPods-AllFinance.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AllFinance.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B0BF4EFF5161F70015FF7D4 /* Pods-AllFinance.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllFinance.debug.xcconfig"; path = "Target Support Files/Pods-AllFinance/Pods-AllFinance.debug.xcconfig"; sourceTree = "<group>"; };
+		9BCAD3249D38460F92F14BAC /* Teko-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Teko-Bold.ttf"; path = "../assets/fonts/Teko-Bold.ttf"; sourceTree = "<group>"; };
+		C0B5A735D4C04CCC8EFB17FD /* Teko-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Teko-Regular.ttf"; path = "../assets/fonts/Teko-Regular.ttf"; sourceTree = "<group>"; };
+		C591853730F64E448353621F /* Teko-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Teko-Medium.ttf"; path = "../assets/fonts/Teko-Medium.ttf"; sourceTree = "<group>"; };
+		CCE433BB9B644FCA92CB4BAF /* Teko-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Teko-Light.ttf"; path = "../assets/fonts/Teko-Light.ttf"; sourceTree = "<group>"; };
 		DA81599DFD720974AF86DD0D /* Pods-AllFinance-AllFinanceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllFinance-AllFinanceTests.release.xcconfig"; path = "Target Support Files/Pods-AllFinance-AllFinanceTests/Pods-AllFinance-AllFinanceTests.release.xcconfig"; sourceTree = "<group>"; };
+		E70159B6120D4F12A2578FC6 /* Teko-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Teko-SemiBold.ttf"; path = "../assets/fonts/Teko-SemiBold.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -134,6 +144,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				5B8879BE85228461952BEFF4 /* Pods */,
+				EDB7E26333004D658D268F92 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +158,19 @@
 				00E356EE1AD99517003FC87E /* AllFinanceTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		EDB7E26333004D658D268F92 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9BCAD3249D38460F92F14BAC /* Teko-Bold.ttf */,
+				CCE433BB9B644FCA92CB4BAF /* Teko-Light.ttf */,
+				C591853730F64E448353621F /* Teko-Medium.ttf */,
+				C0B5A735D4C04CCC8EFB17FD /* Teko-Regular.ttf */,
+				E70159B6120D4F12A2578FC6 /* Teko-SemiBold.ttf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +269,11 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				E7B4D85652C640DABE044FE0 /* Teko-Bold.ttf in Resources */,
+				650DADC1FCA84AA08333C6F5 /* Teko-Light.ttf in Resources */,
+				8B716F520AE1468D8168DB91 /* Teko-Medium.ttf in Resources */,
+				F60E0C5BCE834ADDA916D7A7 /* Teko-Regular.ttf in Resources */,
+				8A33958CFB0848A195DBAAA1 /* Teko-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
