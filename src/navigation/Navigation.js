@@ -17,7 +17,7 @@ const screenOptions = {
     fontFamily: GStyles.fontFamilyMedium,
     fontSize: 25,
   },
-  headerTintColor: '#ffe6c7',
+  headerTintColor: GStyles.secondaryText,
   headerTitleAlign: 'center',
 };
 
@@ -27,11 +27,10 @@ const Navigation = () => (
       <Stack.Screen
         name="SignIn"
         component={SignIn}
-        options={
-          {
-            // headerShown: false,
-          }
-        }
+        options={{
+          title: 'Sign In',
+          // headerShown: false,
+        }}
       />
     </Stack.Navigator>
   </NavigationContainer>
