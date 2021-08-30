@@ -6,4 +6,5 @@ export default {
   fontFamily: 'Teko-Regular',
   fontFamilyMedium: 'Teko-Medium',
   fontFamilyBold: 'Teko-Bold',
+  submitButton: '#35bd33',
 };

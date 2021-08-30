@@ -3,13 +3,14 @@ import {Text, StyleSheet} from 'react-native';
 import GStyles from '../global/globalStyles';
 import PropTypes from 'prop-types';
 
-const FText = ({children, bold, fontSize, style, ...props}) => (
+const FText = ({children, bold, fontSize, color, style, ...props}) => (
   <Text
     style={[
       styles.container,
       style,
       {
         fontFamily: bold ? GStyles.fontFamilyBold : GStyles.fontFamily,
+        color,
         fontSize,
       },
     ]}
@@ -27,6 +28,7 @@ const styles = StyleSheet.create({
 FText.defaultProps = {
   bold: false,
   fontSize: 24,
+  color: GStyles.primaryText,
 };
 
 FText.propTypes = {
