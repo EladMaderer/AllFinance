@@ -26,13 +26,6 @@ const SignIn = props => {
               placeholder="Password"
               secureTextEntry
             />
-            <Field
-              component={FTextInput}
-              autoCorrect={false}
-              name="confirmPassword"
-              placeholder="Confirm Password"
-              secureTextEntry
-            />
             <FButton
               // color="red"
               title="Submit"

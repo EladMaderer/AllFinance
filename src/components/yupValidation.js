@@ -16,8 +16,4 @@ export const loginValidationSchema = yup.object().shape({
     )
     .min(8, ({min}) => `Password must be at least ${min} characters`)
     .required('Password is required'),
-  confirmPassword: yup
-    .string()
-    .oneOf([yup.ref('password')], 'Passwords do not match')
-    .required('Confirm password is required'),
 });
