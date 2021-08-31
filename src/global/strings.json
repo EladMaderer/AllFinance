@@ -1,0 +1,10 @@
+{
+  "emailRequired": "Email Address is Required",
+  "emailValidation": "Please enter valid email",
+  "passwordRequired": "Password is required",
+  "mustSmallLetter": "Password must have a small letter",
+  "mustCapitalLetter": "Password must have a capital letter",
+  "mustNumber": "Password must have a number",
+  "mustSpecialChar": "Password must have a special character",
+  "mustBeAtLeast": "Password must be at least"
+}

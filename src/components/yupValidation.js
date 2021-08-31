@@ -1,19 +1,20 @@
 import * as yup from 'yup';
+import strings from '../global/strings.json';
 
 export const loginValidationSchema = yup.object().shape({
   email: yup
     .string()
-    .email('Please enter valid email')
-    .required('Email Address is Required'),
+    .email(strings.emailValidation)
+    .required(strings.emailRequired),
   password: yup
     .string()
-    .matches(/\w*[a-z]\w*/, 'Password must have a small letter')
-    .matches(/\w*[A-Z]\w*/, 'Password must have a capital letter')
-    .matches(/\d/, 'Password must have a number')
+    .matches(/\w*[a-z]\w*/, strings.mustSmallLetter)
+    .matches(/\w*[A-Z]\w*/, strings.mustCapitalLetter)
+    .matches(/\d/, strings.mustNumber)
     .matches(
       /[!@#$%^&*()\-_"=+{}; :,<.>]/,
-      'Password must have a special character',
+      strings.mustSpecialChar,
     )
-    .min(8, ({min}) => `Password must be at least ${min} characters`)
-    .required('Password is required'),
+    .min(8, ({min}) => `${strings.mustBeAtLeast} ${min} characters`)
+    .required(strings.passwordRequired),
 });
