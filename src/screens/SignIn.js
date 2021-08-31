@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {FText, FTextInput, FButton} from '../common';
-import {Formik} from 'formik';
+import {FTextInput, FButton} from '../common';
+import {Formik, Field} from 'formik';
 import {loginValidationSchema} from '../components/yupValidation';
 
 const SignIn = props => {
@@ -11,39 +11,34 @@ const SignIn = props => {
         validationSchema={loginValidationSchema}
         initialValues={{email: '', password: ''}}
         onSubmit={values => alert(JSON.stringify(values))}>
-        {({
-          handleChange,
-          handleBlur,
-          handleSubmit,
-          values,
-          errors,
-          isValid,
-        }) => (
+        {({handleSubmit, isValid}) => (
           <>
-            <FTextInput
+            <Field
+              component={FTextInput}
               keyboardType="email-address"
               name="email"
               placeholder="Email Address"
-              onChangeText={handleChange('email')}
-              onBlur={handleBlur('email')}
-              value={values.email}
-              error={errors.email}
             />
-            <FTextInput
+            <Field
+              component={FTextInput}
               autoCorrect={false}
               name="password"
               placeholder="Password"
-              onChangeText={handleChange('password')}
-              onBlur={handleBlur('password')}
-              value={values.password}
               secureTextEntry
-              error={errors.password}
+            />
+            <Field
+              component={FTextInput}
+              autoCorrect={false}
+              name="confirmPassword"
+              placeholder="Confirm Password"
+              secureTextEntry
             />
             <FButton
               // color="red"
               title="Submit"
               style={styles.formButton}
               onPress={handleSubmit}
+              // disabled={!isValid}
             />
           </>
         )}
