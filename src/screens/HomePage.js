@@ -8,7 +8,7 @@ const HomePage = props => {
   const email = useSelector(state => state.signInReducer.email);
   return (
     <View>
-      <FText>{isSignedIn && <FText>Signed in, welcome {email}</FText>}</FText>
+      <FText>Signed in, welcome {email}</FText>
     </View>
   );
 };

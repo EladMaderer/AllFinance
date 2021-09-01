@@ -13,7 +13,7 @@ const SignIn = () => {
       <Formik
         validationSchema={loginValidationSchema}
         initialValues={{email: '', password: ''}}
-        onSubmit={values => dispatch(signIn(true, values.email))}>
+        onSubmit={values => dispatch(signIn(values.email))}>
         {({handleSubmit, isValid}) => (
           <>
             <Field

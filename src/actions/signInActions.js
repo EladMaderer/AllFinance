@@ -1,9 +1,13 @@
-import {USER_SIGN_IN} from './types';
+import {USER_SIGN_IN, USER_SIGN_OUT} from './types';
 
-export const signIn = (signedIn, email) => ({
+export const signIn = email => ({
   type: USER_SIGN_IN,
   payload: {
-    signedIn,
+    signedIn: true,
     email,
   },
+});
+
+export const signOut = () => ({
+  type: USER_SIGN_OUT,
 });

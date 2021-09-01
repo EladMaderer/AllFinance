@@ -5,6 +5,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import GStyles from '../global/globalStyles';
 
+import CustomDrawerContent from './CustomDrawerContent';
 import SignIn from '../screens/SignIn';
 import HomePage from '../screens/HomePage';
 
@@ -28,7 +29,22 @@ const globalScreenOptions = {
 
 const drawerNav = () => (
   <NavigationContainer>
-    <Drawer.Navigator screenOptions={globalScreenOptions}>
+    <Drawer.Navigator
+      screenOptions={{
+        ...globalScreenOptions,
+        drawerStyle: {
+          backgroundColor: '#b5b5b5',
+          width: '60%',
+        },
+        drawerActiveTintColor: '#fff',
+        drawerLabelStyle: {
+          color: GStyles.appBG,
+          fontFamily: GStyles.fontFamily,
+          fontSize: 22,
+        },
+        // drawerType: 'front',
+      }}
+      drawerContent={props => <CustomDrawerContent {...props} />}>
       <Drawer.Screen name="HomePage" component={HomePage} />
     </Drawer.Navigator>
   </NavigationContainer>
