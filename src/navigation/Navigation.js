@@ -1,15 +1,20 @@
 import React from 'react';
+import {useSelector} from 'react-redux';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
+import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import GStyles from '../global/globalStyles';
 
 import SignIn from '../screens/SignIn';
+import HomePage from '../screens/HomePage';
 
 const Stack = createNativeStackNavigator();
+const Drawer = createDrawerNavigator();
+
 const navTheme = DefaultTheme;
 navTheme.colors.background = GStyles.appBG;
 
-const screenOptions = {
+const globalScreenOptions = {
   headerStyle: {
     backgroundColor: GStyles.appBG,
   },
@@ -21,19 +26,32 @@ const screenOptions = {
   headerTitleAlign: 'center',
 };
 
-const Navigation = () => (
-  <NavigationContainer theme={navTheme}>
-    <Stack.Navigator screenOptions={screenOptions}>
+const drawerNav = () => (
+  <NavigationContainer>
+    <Drawer.Navigator screenOptions={globalScreenOptions}>
+      <Drawer.Screen name="HomePage" component={HomePage} />
+    </Drawer.Navigator>
+  </NavigationContainer>
+);
+
+const stackNav = () => (
+  <NavigationContainer>
+    <Stack.Navigator screenOptions={globalScreenOptions}>
       <Stack.Screen
         name="SignIn"
         component={SignIn}
         options={{
           title: 'Sign In',
-          // headerShown: false,
+          headerShown: false,
         }}
       />
     </Stack.Navigator>
   </NavigationContainer>
 );
+
+const Navigation = () => {
+  const isSignedIn = useSelector(state => state.signInReducer.userSignedIn);
+  return isSignedIn ? drawerNav() : stackNav();
+};
 
 export default Navigation;

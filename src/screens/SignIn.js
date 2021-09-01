@@ -1,15 +1,13 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
-import {useDispatch, useSelector} from 'react-redux';
-import {FTextInput, FButton, FText} from '../common';
+import {useDispatch} from 'react-redux';
+import {FTextInput, FButton} from '../common';
 import {Formik, Field} from 'formik';
 import {loginValidationSchema} from '../components/yupValidation';
 import {signIn} from '../actions/signInActions';
 
-const SignIn = props => {
+const SignIn = () => {
   const dispatch = useDispatch();
-  const isSignedIn = useSelector(state => state.signInReducer.userSignedIn);
-  const email = useSelector(state => state.signInReducer.email);
   return (
     <View style={styles.loginContainer}>
       <Formik
@@ -32,7 +30,6 @@ const SignIn = props => {
               secureTextEntry
             />
             <FButton
-              // color="red"
               title="Submit"
               style={styles.formButton}
               onPress={handleSubmit}
@@ -41,7 +38,6 @@ const SignIn = props => {
           </>
         )}
       </Formik>
-      {isSignedIn && <FText>Signed in, welcome {email}</FText>}
     </View>
   );
 };
@@ -49,7 +45,7 @@ const SignIn = props => {
 const styles = StyleSheet.create({
   loginContainer: {
     flex: 1,
-    marginTop: '25%',
+    marginTop: '50%',
     alignItems: 'center',
     alignSelf: 'stretch',
   },
