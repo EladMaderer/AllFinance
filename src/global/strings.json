@@ -6,5 +6,9 @@
   "mustCapitalLetter": "Password must have a capital letter",
   "mustNumber": "Password must have a number",
   "mustSpecialChar": "Password must have a special character",
-  "mustBeAtLeast": "Password must be at least"
+  "passwordMustBeAtLeast": "Password must be at least",
+  "usernameMustBeAtLeast": "Password must be at least",
+  "usernameMustBeMax": "Password must be not be more than",
+  "mustOnlyBeLettersAndNumbers": "Must only be letters and/or numbers",
+  "passwordsDoNotMatch": "Passwords do not match"
 }

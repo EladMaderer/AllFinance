@@ -6,6 +6,7 @@ import {Formik, Field} from 'formik';
 import {loginValidationSchema} from '../components/yupValidation';
 import {signIn} from '../actions/signInActions';
 import {nav} from '../global/globalConst';
+import GBStyles from '../global/globalStyles';
 
 const SignIn = ({navigation}) => {
   const dispatch = useDispatch();
@@ -25,7 +26,6 @@ const SignIn = ({navigation}) => {
             />
             <Field
               component={FTextInput}
-              autoCorrect={false}
               name="password"
               placeholder="Password"
               secureTextEntry
@@ -40,9 +40,9 @@ const SignIn = ({navigation}) => {
         )}
       </Formik>
       <TouchableOpacity
-        style={styles.signUp}
+        style={styles.signUpBtn}
         onPress={() => navigation.navigate(nav.SIGN_UP)}>
-        <FText link fontSize={28} style={styles.signUpText}>
+        <FText link fontSize={28}>
           Sign Up
         </FText>
       </TouchableOpacity>
@@ -53,7 +53,7 @@ const SignIn = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: '50%',
+    marginTop: '30%',
     alignItems: 'center',
     alignSelf: 'stretch',
   },
@@ -64,12 +64,12 @@ const styles = StyleSheet.create({
   formButton: {
     marginTop: 14,
   },
-  signUp: {
+  signUpBtn: {
     position: 'absolute',
     bottom: 70,
-  },
-  signUpText: {
-    textDecorationLine: 'underline',
+    borderBottomWidth: 1,
+    borderColor: GBStyles.linkBlue,
+    paddingHorizontal: 12,
   },
 });
 
