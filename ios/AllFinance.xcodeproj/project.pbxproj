@@ -12,7 +12,6 @@
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		650DADC1FCA84AA08333C6F5 /* Teko-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CCE433BB9B644FCA92CB4BAF /* Teko-Light.ttf */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8A33958CFB0848A195DBAAA1 /* Teko-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E70159B6120D4F12A2578FC6 /* Teko-SemiBold.ttf */; };
 		8B716F520AE1468D8168DB91 /* Teko-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C591853730F64E448353621F /* Teko-Medium.ttf */; };
 		8B993217F5B4A1CFA57F2A51 /* libPods-AllFinance-AllFinanceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E8AE59AD03A302A7873B571 /* libPods-AllFinance-AllFinanceTests.a */; };
@@ -43,7 +42,6 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = AllFinance/main.m; sourceTree = "<group>"; };
 		2DA76001CA9B99390343E0D4 /* Pods-AllFinance.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllFinance.release.xcconfig"; path = "Target Support Files/Pods-AllFinance/Pods-AllFinance.release.xcconfig"; sourceTree = "<group>"; };
 		65BE9F73278BB9D3D1E500AA /* Pods-AllFinance-AllFinanceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AllFinance-AllFinanceTests.debug.xcconfig"; path = "Target Support Files/Pods-AllFinance-AllFinanceTests/Pods-AllFinance-AllFinanceTests.debug.xcconfig"; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = AllFinance/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8EC0F2CDCE689B7CB2135A43 /* libPods-AllFinance.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AllFinance.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BCAD3249D38460F92F14BAC /* Teko-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Teko-Bold.ttf"; path = "../assets/fonts/Teko-Bold.ttf"; sourceTree = "<group>"; };
 		9E8AE59AD03A302A7873B571 /* libPods-AllFinance-AllFinanceTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AllFinance-AllFinanceTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -100,7 +98,6 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = AllFinance;
@@ -265,7 +262,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				E7B4D85652C640DABE044FE0 /* Teko-Bold.ttf in Resources */,
 				650DADC1FCA84AA08333C6F5 /* Teko-Light.ttf in Resources */,
