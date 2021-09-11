@@ -7,4 +7,5 @@ export default {
   fontFamilyMedium: 'Teko-Medium',
   fontFamilyBold: 'Teko-Bold',
   submitButton: '#35bd33',
+  linkBlue: '#59a1ff',
 };

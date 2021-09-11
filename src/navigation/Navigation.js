@@ -4,9 +4,11 @@ import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import GStyles from '../global/globalStyles';
+import {nav} from '../global/globalConst';
 
 import CustomDrawerContent from './CustomDrawerContent';
 import SignIn from '../screens/SignIn';
+import SignUp from '../screens/SignUp';
 import HomePage from '../screens/HomePage';
 
 const Stack = createNativeStackNavigator();
@@ -54,11 +56,18 @@ const stackNav = () => (
   <NavigationContainer>
     <Stack.Navigator screenOptions={globalScreenOptions}>
       <Stack.Screen
-        name="SignIn"
+        name={nav.SIGN_IN}
         component={SignIn}
         options={{
           title: 'Sign In',
-          headerShown: false,
+          // headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name={nav.SIGN_UP}
+        component={SignUp}
+        options={{
+          title: 'Sign Up',
         }}
       />
     </Stack.Navigator>

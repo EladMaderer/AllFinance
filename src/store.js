@@ -6,7 +6,7 @@ import signInReducer from './reducers/signInReducer';
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['userSignedIn'],
+  // whitelist: ['userSignedIn', 'email'],
 };
 
 const rootReducer = combineReducers({
