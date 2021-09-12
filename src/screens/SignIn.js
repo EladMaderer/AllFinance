@@ -1,21 +1,34 @@
 import React from 'react';
 import {View, StyleSheet, TouchableOpacity} from 'react-native';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {FTextInput, FButton, FText} from '../common';
 import {Formik, Field} from 'formik';
-import {loginValidationSchema} from '../components/yupValidation';
+import {loginValidationSchema} from '../utilities/yupValidation';
 import {signIn} from '../actions/signInActions';
+import {encrypt_password} from '../utilities/utilities';
 import {nav} from '../global/globalConst';
 import GBStyles from '../global/globalStyles';
 
 const SignIn = ({navigation}) => {
   const dispatch = useDispatch();
+  const userDetails = useSelector(
+    ({signUpReducer}) => signUpReducer.userDetails,
+  );
+  const submit = values => {
+    const user = userDetails.find(
+      ({email, password}) =>
+        email === values.email &&
+        password === encrypt_password(values.password),
+    );
+    user ? dispatch(signIn(user)) : alert('Wrong username or password');
+  };
   return (
     <View style={styles.container}>
       <Formik
         validationSchema={loginValidationSchema}
         initialValues={{email: '', password: ''}}
-        onSubmit={values => dispatch(signIn(values.email))}>
+        // onSubmit={values => dispatch(signIn(values.email))}>
+        onSubmit={values => submit(values)}>
         {({handleSubmit, isValid}) => (
           <>
             <Field

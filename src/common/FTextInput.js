@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     textAlignVertical: 'bottom',
   },
   errorMsg: {
-    height: 35,
+    height: 32,
     marginBottom: 14,
     marginTop: 2,
   },

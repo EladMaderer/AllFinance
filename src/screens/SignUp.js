@@ -1,16 +1,32 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
+import {useDispatch, useSelector} from 'react-redux';
 import {Formik, Field} from 'formik';
-import {signUpValidationSchema} from '../components/yupValidation';
-import {FButton, FTextInput} from '../common';
+import {signUpValidationSchema} from '../utilities/yupValidation';
+import {encrypt_password} from '../utilities/utilities';
+import {FButton, FText, FTextInput} from '../common';
+import {signUp} from '../actions/signUpActions';
 
 const SignUp = props => {
+  const dispatch = useDispatch();
+  const users = useSelector(({signUpReducer}) => signUpReducer.userDetails);
+  const submit = values => {
+    !users.find(user => user.email === values.email)
+      ? dispatch(
+          signUp({
+            ...values,
+            password: encrypt_password(values.password),
+            confirmPassword: encrypt_password(values.confirmPassword),
+          }),
+        )
+      : alert(`Email address ${values.email} already exists`);
+  };
   return (
     <View style={styles.container}>
       <Formik
         validationSchema={signUpValidationSchema}
         initialValues={{username: '', email: '', password: ''}}
-        onSubmit={values => alert(values.username)}>
+        onSubmit={values => submit(values)}>
         {({handleSubmit}) => (
           <>
             <Field
@@ -45,6 +61,7 @@ const SignUp = props => {
           </>
         )}
       </Formik>
+      <FText>{JSON.stringify(users)}</FText>
     </View>
   );
 };
