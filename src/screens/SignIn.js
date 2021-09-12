@@ -27,7 +27,6 @@ const SignIn = ({navigation}) => {
       <Formik
         validationSchema={loginValidationSchema}
         initialValues={{email: '', password: ''}}
-        // onSubmit={values => dispatch(signIn(values.email))}>
         onSubmit={values => submit(values)}>
         {({handleSubmit, isValid}) => (
           <>

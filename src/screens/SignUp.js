@@ -5,21 +5,25 @@ import {Formik, Field} from 'formik';
 import {signUpValidationSchema} from '../utilities/yupValidation';
 import {encrypt_password} from '../utilities/utilities';
 import {FButton, FText, FTextInput} from '../common';
+import {nav} from '../global/globalConst';
 import {signUp} from '../actions/signUpActions';
 
-const SignUp = props => {
+const SignUp = ({navigation}) => {
   const dispatch = useDispatch();
   const users = useSelector(({signUpReducer}) => signUpReducer.userDetails);
   const submit = values => {
-    !users.find(user => user.email === values.email)
-      ? dispatch(
-          signUp({
-            ...values,
-            password: encrypt_password(values.password),
-            confirmPassword: encrypt_password(values.confirmPassword),
-          }),
-        )
-      : alert(`Email address ${values.email} already exists`);
+    if (!users.find(user => user.email === values.email)) {
+      dispatch(
+        signUp({
+          ...values,
+          password: encrypt_password(values.password),
+          confirmPassword: encrypt_password(values.confirmPassword),
+        }),
+      );
+      navigation.navigate(nav.SIGN_IN);
+    } else {
+      alert(`Email address ${values.email} already exists`);
+    }
   };
   return (
     <View style={styles.container}>

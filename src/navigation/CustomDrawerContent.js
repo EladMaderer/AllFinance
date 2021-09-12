@@ -8,7 +8,9 @@ import {
   DrawerItemList,
 } from '@react-navigation/drawer';
 import {signOut} from '../actions/signInActions';
+import {deleteAllUsers} from '../actions/signUpActions';
 import GStyles from '../global/globalStyles';
+import strings from '../global/strings.json';
 import {FText} from '../common';
 
 const CustomDrawerContent = props => {
@@ -20,14 +22,14 @@ const CustomDrawerContent = props => {
     <>
       <DrawerContentScrollView {...props}>
         <View style={styles.menuItems}>
-          <FText color={GStyles.appBG}>
-            {`Hello ${username}`}
-            {admin && (
-              <TouchableOpacity>
-                <FText>Del</FText>
-              </TouchableOpacity>
-            )}
-          </FText>
+          <FText color={GStyles.appBG}>{`Hello ${username}`}</FText>
+          {admin && (
+            <TouchableOpacity onPress={() => dispatch(deleteAllUsers())}>
+              <FText fontSize={18} color={GStyles.warningRed}>
+                {strings.deleteUsers}
+              </FText>
+            </TouchableOpacity>
+          )}
         </View>
         <DrawerItemList {...props} />
         <DrawerItem
@@ -45,8 +47,9 @@ const CustomDrawerContent = props => {
 
 const styles = StyleSheet.create({
   menuItems: {
+    flexDirection: 'row',
     alignItems: 'center',
-    borderWidth: 5
+    justifyContent: 'space-around',
   },
   labelStyle: {
     color: GStyles.appBG,

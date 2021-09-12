@@ -7,7 +7,7 @@ import signUpReducer from './reducers/signUpReducer';
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['userSignedIn', 'email', 'userDetails'],
+  whitelist: ['userSignedIn', 'userDetails', 'loggedUser'],
   // blacklist: ['userSignedIn', 'email', 'userDetails'],
 };
 

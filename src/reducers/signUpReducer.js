@@ -16,7 +16,6 @@ const signUpReducer = (state = INITIAL_STATE, action) => {
   const {type, payload} = action;
   switch (type) {
     case USER_SIGN_UP:
-      alert(JSON.stringify(payload))
       return {
         ...state,
         userDetails: [...state.userDetails, {...payload, admin: false}],

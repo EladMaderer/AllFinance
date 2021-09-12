@@ -8,4 +8,5 @@ export default {
   fontFamilyBold: 'Teko-Bold',
   submitButton: '#35bd33',
   linkBlue: '#59a1ff',
+  warningRed: '#ff2929',
 };

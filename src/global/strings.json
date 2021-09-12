@@ -10,5 +10,8 @@
   "usernameMustBeAtLeast": "Password must be at least",
   "usernameMustBeMax": "Password must be not be more than",
   "mustOnlyBeLettersAndNumbers": "Must only be letters and/or numbers",
-  "passwordsDoNotMatch": "Passwords do not match"
+  "passwordsDoNotMatch": "Passwords do not match",
+
+
+  "deleteUsers": "Delete all users"
 }
