@@ -9,7 +9,6 @@ const signInReducer = (state = INITIAL_STATE, action) => {
   const {type, payload} = action;
   switch (type) {
     case USER_SIGN_IN:
-      alert(JSON.stringify(payload));
       return {...state, userSignedIn: true, loggedUser: payload};
     case USER_SIGN_OUT:
       return {...state, userSignedIn: false};

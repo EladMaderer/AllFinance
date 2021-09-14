@@ -10,6 +10,7 @@ import CustomDrawerContent from './CustomDrawerContent';
 import SignIn from '../screens/SignIn';
 import SignUp from '../screens/SignUp';
 import HomePage from '../screens/HomePage';
+import AllUsers from '../screens/AllUsers';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -29,30 +30,41 @@ const globalScreenOptions = {
   headerTitleAlign: 'center',
 };
 
-const drawerNav = () => (
-  <NavigationContainer>
-    <Drawer.Navigator
-      screenOptions={{
-        ...globalScreenOptions,
-        drawerStyle: {
-          backgroundColor: '#b5b5b5',
-          width: '60%',
-        },
-        drawerActiveTintColor: '#fff',
-        drawerLabelStyle: {
-          color: GStyles.appBG,
-          fontFamily: GStyles.fontFamily,
-          fontSize: 22,
-        },
-        // drawerType: 'front',
-      }}
-      drawerContent={props => <CustomDrawerContent {...props} />}>
-      <Drawer.Screen name="HomePage" component={HomePage} />
-    </Drawer.Navigator>
-  </NavigationContainer>
-);
+const DrawerNav = (admin) => {
+  return (
+    <NavigationContainer>
+      <Drawer.Navigator
+        screenOptions={{
+          ...globalScreenOptions,
+          drawerStyle: {
+            backgroundColor: '#b5b5b5',
+            width: '60%',
+          },
+          drawerActiveTintColor: '#fff',
+          drawerLabelStyle: {
+            color: GStyles.appBG,
+            fontFamily: GStyles.fontFamily,
+            fontSize: 22,
+          },
+          // drawerType: 'front',
+        }}
+        drawerContent={props => <CustomDrawerContent {...props} />}>
+        <Drawer.Screen name="HomePage" component={HomePage} />
+        {admin && (
+          <Drawer.Screen
+            name={'AllUsers'}
+            component={AllUsers}
+            options={{
+              title: 'Registered Users',
+            }}
+          />
+        )}
+      </Drawer.Navigator>
+    </NavigationContainer>
+  );
+};
 
-const stackNav = () => (
+const StackNav = () => (
   <NavigationContainer>
     <Stack.Navigator screenOptions={globalScreenOptions}>
       <Stack.Screen
@@ -75,8 +87,11 @@ const stackNav = () => (
 );
 
 const Navigation = () => {
-  const isSignedIn = useSelector(state => state.signInReducer.userSignedIn);
-  return isSignedIn ? drawerNav() : stackNav();
+  const {admin} = useSelector(({signInReducer}) => signInReducer.loggedUser);
+  const isSignedIn = useSelector(
+    ({signInReducer}) => signInReducer.userSignedIn,
+  );
+  return isSignedIn ? DrawerNav(admin) : StackNav();
 };
 
 export default Navigation;

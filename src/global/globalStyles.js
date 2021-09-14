@@ -9,4 +9,5 @@ export default {
   submitButton: '#35bd33',
   linkBlue: '#59a1ff',
   warningRed: '#ff2929',
+  green: '#4af74f',
 };

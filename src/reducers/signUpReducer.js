@@ -2,10 +2,10 @@ import {USER_SIGN_UP, DELETE_USERS} from '../actions/types';
 import {encrypt_password} from '../utilities/utilities';
 
 const INITIAL_STATE = {
-  userDetails: [
+  registeredUsers: [
     {
       username: 'Admin',
-      email: 'blameAdmin@gmail.com',
+      email: 'admin@gmail.com',
       password: encrypt_password('Blame300!'),
       admin: true,
     },
@@ -18,7 +18,7 @@ const signUpReducer = (state = INITIAL_STATE, action) => {
     case USER_SIGN_UP:
       return {
         ...state,
-        userDetails: [...state.userDetails, {...payload, admin: false}],
+        registeredUsers: [...state.registeredUsers, {...payload, admin: false}],
       };
     case DELETE_USERS:
       return state;

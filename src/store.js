@@ -4,16 +4,21 @@ import {persistStore, persistReducer} from 'redux-persist';
 import signInReducer from './reducers/signInReducer';
 import signUpReducer from './reducers/signUpReducer';
 
-const persistConfig = {
+const signInPersistConfig = {
   key: 'root',
   storage: AsyncStorage,
-  whitelist: ['userSignedIn', 'userDetails', 'loggedUser'],
-  // blacklist: ['userSignedIn', 'email', 'userDetails'],
+  whitelist: ['userSignedIn', 'loggedUser'],
+};
+
+const signUpPersistConfig = {
+  key: 'signUpReducer',
+  storage: AsyncStorage,
+  whitelist: ['registeredUsers'],
 };
 
 const rootReducer = combineReducers({
-  signInReducer: persistReducer(persistConfig, signInReducer),
-  signUpReducer: persistReducer(persistConfig, signUpReducer),
+  signInReducer: persistReducer(signInPersistConfig, signInReducer),
+  signUpReducer: persistReducer(signUpPersistConfig, signUpReducer),
 });
 
 const configureStore = () => createStore(rootReducer);

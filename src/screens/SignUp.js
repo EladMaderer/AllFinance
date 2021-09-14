@@ -10,7 +10,7 @@ import {signUp} from '../actions/signUpActions';
 
 const SignUp = ({navigation}) => {
   const dispatch = useDispatch();
-  const users = useSelector(({signUpReducer}) => signUpReducer.userDetails);
+  const users = useSelector(({signUpReducer}) => signUpReducer.registeredUsers);
   const submit = values => {
     if (!users.find(user => user.email === values.email)) {
       dispatch(
@@ -65,7 +65,6 @@ const SignUp = ({navigation}) => {
           </>
         )}
       </Formik>
-      <FText>{JSON.stringify(users)}</FText>
     </View>
   );
 };

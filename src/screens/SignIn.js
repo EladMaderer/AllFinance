@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, TouchableOpacity, KeyboardAvoidingView} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {FTextInput, FButton, FText} from '../common';
 import {Formik, Field} from 'formik';
@@ -12,12 +12,12 @@ import GBStyles from '../global/globalStyles';
 const SignIn = ({navigation}) => {
   const dispatch = useDispatch();
   const userDetails = useSelector(
-    ({signUpReducer}) => signUpReducer.userDetails,
+    ({signUpReducer}) => signUpReducer.registeredUsers,
   );
   const submit = values => {
     const user = userDetails.find(
       ({email, password}) =>
-        email === values.email &&
+        email.toLowerCase() === values.email.toLowerCase() &&
         password === encrypt_password(values.password),
     );
     user ? dispatch(signIn(user)) : alert('Wrong username or password');
@@ -77,8 +77,7 @@ const styles = StyleSheet.create({
     marginTop: 14,
   },
   signUpBtn: {
-    position: 'absolute',
-    bottom: 70,
+    marginTop: 60,
     borderBottomWidth: 1,
     borderColor: GBStyles.linkBlue,
     paddingHorizontal: 12,
