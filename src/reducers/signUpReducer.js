@@ -21,7 +21,7 @@ const signUpReducer = (state = INITIAL_STATE, action) => {
         registeredUsers: [...state.registeredUsers, {...payload, admin: false}],
       };
     case DELETE_USERS:
-      return state;
+      return INITIAL_STATE;
     default:
       return state;
   }
